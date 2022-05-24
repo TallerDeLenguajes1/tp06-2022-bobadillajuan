@@ -11,4 +11,19 @@ public class Calculadora{
         Resultado += valor;
     }
 
+    public void Resta(double valor){
+        Resultado -= valor;
+    }
+    public void Multiplicar(double valor){
+        Resultado = Resultado * valor;
+    }
+
+    public void Dividir(double valor){
+        Resultado = Resultado / valor;
+    }
+
+    public void Limpiar(){
+        Resultado = 0;
+    }
+
 }
