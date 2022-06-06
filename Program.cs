@@ -1,44 +1,60 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-Calculadora calc = new Calculadora(5);
+﻿Calculadora calc = new Calculadora(5);
 int numero = 0;
 
 Console.WriteLine("--- Calculadora. Valor inicial = 5---");
 Console.WriteLine("Selecciones la operacion: ");
 while (numero != 10)
 {
-numero = int.Parse(Console.ReadLine());
+Console.WriteLine("\n1) Sumar.");
+Console.WriteLine("\n2) Restar.");
+Console.WriteLine("\n3) Multiplicar.");
+Console.WriteLine("\n4) Dividir.");
+Console.WriteLine("\n5) Limpiar.");
+Console.WriteLine("\n6) Salir.\n");
+
+numero = Convert.ToInt32(Console.ReadLine());
+
 switch (numero)
 {
     case 1: 
-    calc.Suma(5);
-    Console.WriteLine(calc.Resultado);
+    Console.WriteLine("\nIngrese operador: ");
+    calc.Suma(Convert.ToDouble(Console.ReadLine()));
+    Console.WriteLine("Resultado: " + calc.Resultado);
     break;
 
     case 2:
-    calc.Resta(6);
-    Console.WriteLine(calc.Resultado);
+    Console.WriteLine("\nIngrese operador: ");
+    calc.Resta(Convert.ToDouble(Console.ReadLine()));
+    Console.WriteLine("Resultado: " + calc.Resultado);
     break;
 
     case 3:
-    calc.Multiplicar(2);
-    Console.WriteLine(calc.Resultado);
+    Console.WriteLine("\nIngrese operador: ");
+    calc.Multiplicar(Convert.ToDouble(Console.ReadLine()));
+    Console.WriteLine("Resultado: " + calc.Resultado);
     break;
 
     case 4:
-    calc.Dividir(3);
-    Console.WriteLine(calc.Resultado);
+    Console.WriteLine("\nIngrese operador: ");
+    calc.Dividir(Convert.ToDouble(Console.ReadLine()));
+    Console.WriteLine("Resultado: " + calc.Resultado);
     break;
 
     case 5:
     calc.Limpiar();
-    Console.WriteLine(calc.Resultado);
+    Console.WriteLine("Resultado: " + calc.Resultado);
     break;
 
-    default:
+    case 6:
     Console.WriteLine("Fin de la calculadora. Resultado final: ");
-    Console.WriteLine(calc.Resultado);
+    Console.WriteLine("Resultado: " + calc.Resultado);
     numero = 10;
+    break;
+
+    
+
+    default:
+    Console.WriteLine("\nComando inválido, ingrese nuevamente un comando\n ");
     break;
 }
 }
